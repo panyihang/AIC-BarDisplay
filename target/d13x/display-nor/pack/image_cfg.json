@@ -1,0 +1,164 @@
+{
+    "spi-nor": {
+        "size": "32m",
+        "partitions": {
+            "spl": {
+                "size": "512k"
+            },
+            "env": {
+                "size": "128k"
+            },
+            "env_r": {
+                "size": "128k"
+            },
+            "os": {
+                "size": "3m"
+            },
+            "rodata": {
+                "size": "27m"
+            },
+            "data": {
+                "size": "1m"
+            }
+        }
+    },
+    "image": {
+        "info": {
+            "platform": "d13x",
+            "product": "display-nor",
+            "version": "1.0.0",
+            "media": {
+                "type": "spi-nor",
+                "device_id": 0
+            }
+        },
+        "updater": {
+            "psram": {
+                "file": "usbupg-psram-init.aic",
+                "attr": [
+                    "required",
+                    "run"
+                ],
+                "ram": "0x30044000"
+            },
+            "spl": {
+                "file": "bootloader.aic",
+                "attr": [
+                    "required",
+                    "run"
+                ],
+                "ram": "0x40100000"
+            }
+        },
+        "target": {
+            "spl": {
+                "file": "bootloader.aic",
+                "attr": [
+                    "mtd",
+                    "required"
+                ],
+                "part": [
+                    "spl"
+                ]
+            },
+            "env": {
+                "file": "env.bin",
+                "attr": [
+                    "mtd",
+                    "optional"
+                ],
+                "part": [
+                    "env"
+                ]
+            },
+            "env_r": {
+                "file": "env.bin",
+                "attr": [
+                    "mtd",
+                    "optional"
+                ],
+                "part": [
+                    "env_r"
+                ]
+            },
+            "os": {
+                "file": "d13x_os.itb",
+                "attr": [
+                    "mtd",
+                    "required"
+                ],
+                "part": [
+                    "os"
+                ]
+            },
+            "rodata": {
+                "file": "rodata.fatfs",
+                "attr": [
+                    "mtd",
+                    "optional"
+                ],
+                "part": [
+                    "rodata"
+                ]
+            },
+            "data": {
+                "file": "data.lfs",
+                "attr": [
+                    "mtd",
+                    "optional"
+                ],
+                "part": [
+                    "data"
+                ]
+            }
+        }
+    },
+    "pre-process": {
+        "aicimage": {
+            "usbupg-psram-init.aic": {
+                "head_ver": "0x00010001",
+                "resource": {
+                    "private": "pbp_cfg.bin",
+                    "pbp": "d13x.pbp"
+                }
+            },
+            "pbp_ext.aic": {
+                "head_ver": "0x00010001",
+                "resource": {
+                    "pbp": "d13x.pbp",
+                    "private": "pbp_cfg.bin"
+                },
+                "with_ext": "true"
+            },
+            "loader.aic": {
+                "head_ver": "0x00010001",
+                "loader": {
+                    "file": "bootloader.bin",
+                    "load address": "CONFIG_AIC_BOOTLOADER_LOAD_BASE",
+                    "entry point": "CONFIG_AIC_BOOTLOADER_TEXT_BASE"
+                },
+                "resource": {
+                    "private": "pbp_cfg.bin"
+                }
+            }
+        },
+        "concatenate": {
+            "bootloader.aic": [
+                "pbp_ext.aic",
+                "loader.aic"
+            ]
+        },
+        "itb": {
+            "d13x_os.itb": {
+                "its": "d13x_os.its"
+            }
+        },
+        "uboot_env": {
+            "env.bin": {
+                "file": "env.txt",
+                "size": "4096",
+                "redundant": "enable"
+            }
+        }
+    }
+}

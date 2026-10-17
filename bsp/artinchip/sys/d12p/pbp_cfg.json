@@ -1,0 +1,572 @@
+{
+	"psram": {
+	        "cfg0": { // XCCELA AP12816*2 16M PSRAM, D125CCS/D126FCV/default
+			"common": {
+				"clock":      "252000000", // 198000000 or 252000000
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03000001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304", //cmd_lines, addr_lines, data_lines, addr_width
+				"psram_cfg1": "0x02000001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060405",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060403",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+				"proto": "0x40040104",
+				"id":    "0xdd8ddd8d",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000001", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x19000000", // 198MHz: 0x11000000 252MHz: 0x19000000
+				"proto1": "0xc0000401",
+				"buf1":   "0x60000000", // 198MHz: 0x20000000 252MHz: 0x60000000
+				"proto2": "0xc0000801",
+				"buf2":   "0x44000000", // 198MHz: 0x4C000000 252MHz: 0x44000000
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				//cmd: byte[0]=0x80; dummy: byte[1]=0x07; addr: byte[2]=0x08; len: byte[3]=0x02;
+				"wr_proto": "0x80090002", // 198MHz: 0x80070002 252MHz: 0x80090002
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00090003", // 198MHz: 0x00070003 252MHz: 0x00090003
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x5555aaaa",
+				"buf1": "0xaaaa5555",
+				"buf2": "0x07070101", // 198MHz: 0x05050101 252MHz: 0x07070101
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg9": { // APS6408L-OBx9 (8MB x2) 16M, fuse 0x08; clone of cfg2, id only
+			"common": {
+				"clock":      "252000000", // 198000000 or 252000000
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03000001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304", //cmd_lines, addr_lines, data_lines, addr_width
+				"psram_cfg1": "0x02000001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060405",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060403",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+
+				"proto": "0x40040104",
+				"id":    "0x8b8d8b8d",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000001", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x15000000", // 198MHz: 0x11000000 252MHz: 0x15000000
+				"proto1": "0xc0000401",
+				"buf1":   "0xa0000000", // 198MHz: 0x20000000 252MHz: 0xa0000000
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80080002", // 198MHz: 0x80070002 252MHz: 0x80080002
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00080003", // 198MHz: 0x80070002 252MHz: 0x80080002
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0xAA55AA55", // x8 training value
+				"buf1": "0x55AA55AA",
+				"buf2": "0x04040100", //byte0:read_hold; byte1:write_hold; byte3:axi_read_first; byte4:bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg1": { // XCCELA AP25616*2 32M PSRAM, D125DDS/D125EDS
+			"common": {
+				"clock":      "252000000", // 198000000 or 252000000
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03000001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304", //cmd_lines, addr_lines, data_lines, addr_width
+				"psram_cfg1": "0x02000001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060405",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060403",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+
+				"proto": "0x40040104",
+				"id":    "0xdf8ddf8d",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000001", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x19000000", // 198MHz: 0x11000000 252MHz: 0x19000000
+				"proto1": "0xc0000401",
+				"buf1":   "0x60000000", // 198MHz: 0x20000000 252MHz: 0x60000000
+				"proto2": "0xc0000801",
+				"buf2":   "0x44000000", // 198MHz: 0x4C000000 252MHz: 0x44000000
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				//cmd: byte[0]=0x80; dummy: byte[1]=0x07; addr: byte[2]=0x08; len: byte[3]=0x02;
+				"wr_proto": "0x80090002", // 198MHz: 0x80070002 252MHz: 0x80090002
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x000a0003", // 198MHz: 0x00070003 252MHz: 0x000a0003
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				//byte0:read_hold; byte1:write_hold; byte3:axi_read_first; byte4:bit mode
+				"buf0": "0x5555aaaa",
+				"buf1": "0xaaaa5555",
+				"buf2": "0x07070101", // 198MHz: 0x05050101 252MHz: 0x07070101
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg2": { //OPI APS3208K*2 8M PSRAM, D125CBS/D126FBV
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03020001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030303",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+				"proto": "0x40030204",
+				"id":    "0x80c980c9",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000002", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x19000000",
+				"proto1": "0xc0000402",
+				"buf1":   "0x80000000",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80020002",
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00060003",
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0xAA55AA55", // training_value1
+				"buf1": "0x55AA55AA", // training_value2
+				"buf2": "0x02080100", //byte0:read_hold (0x02); byte1:write_hold (0x08); byte3:axi_read_first(0x01); byte4: bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg3": { //OPI APS3208K*1 4M PSRAM, G720AFU/G720ADU
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x01020001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030303",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+				"proto": "0x40030204",
+				"id":    "0x80c980c9",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000002", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x1a000000",
+				"proto1": "0xc0000402",
+				"buf1":   "0x80000000",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80020002",
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00060003",
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0xAA55AA55",
+				"buf1": "0x55AA55AA",
+				"buf2": "0x02080100", //byte0:read_hold (0x04); byte1:write_hold (0x08); byte3:axi_read_first(0x01); byte4: bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg5": { //HyperRAM W957D6NKR x16 128Mb, Winbond
+			"common": {
+				"clock":      "252000000",// 198000000 or 252000000
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x115d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03010001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x36",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x36",
+			},
+			"reset": {
+				"proto": "0x60080104", //cmd 0x60, addr 0x0801 (CR1), len 4 (single 16-bit word)
+				"buf":   "0xafc10000",
+			},
+			"getid": {
+				"proto": "0xc0040004", //cmd 0xc0, dummy 4, addr 0x0000 (ID space)
+				"id":    "0x0c860c86",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0x60080004", //cmd 0x60, addr 0x0800 (CR0), len 4
+				"buf0":   "0x8f570000", //198MHz: CR0 = 0x8F27 252MHz: CR0 = 0x8F57
+				"proto1": "0xffffffff",
+				"buf1":   "0xffffffff",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x200a0002", //cmd 0x20, dummy 7, len 2 ,198MHz: dummy 7 252MHz: dummy a
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0xa00a0003", //cmd 0xa0, dummy 7, len 3 ,198MHz: dummy 7 252MHz: dummy a
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x5555aaaa", // training_value1 (x16 pattern)
+				"buf1": "0xaaaa5555", // training_value2
+				"buf2": "0x02020001", //byte0:read_hold (0x02); byte1:write_hold (0x02); byte2:axi_read_first(0); byte3: bit mode(1:16bit)
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg6": { //HyperRAM W956D8NKR x8*2 128Mb, Winbond
+			"common": {
+				"clock":      "252000000",// 198000000 or 252000000
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x115d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03010001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x36",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x36",
+			},
+			"reset": {
+				"proto": "0x60080104", //cmd 0x60, addr 0x0801 (CR1), len 4
+				"buf":   "0xafc10000",
+			},
+			"getid": {
+				"proto": "0xc0040004", //cmd 0xc0, dummy 4, addr 0x0000 (ID space)
+				"id":    "0x860c860c",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0x60080004", //cmd 0x60, addr 0x0800 (CR0), len 4
+				"buf0":   "0x8f570000", //198MHz: CR0 = 0x8F27 252MHz: CR0 = 0x8F57
+				"proto1": "0xffffffff",
+				"buf1":   "0xffffffff",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x200a0002", //cmd 0x20, dummy 7, len 2 ,198MHz: dummy 7 252MHz: dummy a
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0xa00a0003", //cmd 0xa0, dummy 7, len 3 ,198MHz: dummy 7 252MHz: dummy a
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x55aa55aa", // training_value1 (x8 pattern)
+				"buf1": "0xaa55aa55", // training_value2
+				"buf2": "0x02020000", //byte0:read_hold (0x02); byte1:write_hold (0x02); byte2:axi_read_first(0); byte3: bit mode(0:8bit)
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg7": { //HyperBus W955D8MKY x8*2 64Mb, Winbond
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x115d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03010001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x36",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x36",
+			},
+			"reset": {
+				"proto": "0x60080104", //cmd 0x60, addr 0x0801 (CR1), len 4
+				"buf":   "0xff810000", //no soft reset, keep the register value
+			},
+			"getid": {
+				"proto": "0xe0040004", //cmd 0xe0, dummy 4, addr 0x0000 (ID space)
+				"id":    "0x5f005f00",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0x60080004", //cmd 0x60, addr 0x0800 (CR0), len 4
+				"buf0":   "0x8f170000", //chip receives 0x8F17
+				"proto1": "0xffffffff",
+				"buf1":   "0xffffffff",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x20060002", //write cmd 0x20, dummy 6, len 2
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0xa0060003", //read cmd 0xa0, dummy 6, len 3
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x55aa55aa", // training_value1 (x8 pattern)
+				"buf1": "0xaa55aa55", // training_value2
+				"buf2": "0x02020000", //byte0:read_hold (0x02); byte1:write_hold (0x02); byte2:axi_read_first(0); byte3: bit mode(0:8bit)
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+		"cfg8": { //HyperBus W955D8MKY x8 32Mb single, Winbond
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x115d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x01010001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x36",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x36",
+			},
+			"reset": {
+				"proto": "0x60080104", //cmd 0x60, addr 0x0801 (CR1), len 4
+				"buf":   "0xff810000", //no soft reset, keep the register value
+			},
+			"getid": {
+				"proto": "0xe0040004", //cmd 0xe0, dummy 4, addr 0x0000 (ID space)
+				"id":    "0x5f005f00",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0x60080004", //cmd 0x60, addr 0x0800 (CR0), len 4
+				"buf0":   "0x8f170000", //chip receives 0x8F17
+				"proto1": "0xffffffff",
+				"buf1":   "0xffffffff",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x20060002", //write cmd 0x20, dummy 6, len 2
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0xa0060003", //read cmd 0xa0, dummy 6, len 3
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x55aa55aa", // training_value1 (x8 pattern)
+				"buf1": "0xaa55aa55", // training_value2
+				"buf2": "0x02020000", //byte0:read_hold (0x02); byte1:write_hold (0x02); byte2:axi_read_first(0); byte3: bit mode(0:8bit)
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+	},
+	"system": {
+		"upgmode": { // Set PIN to enter BROM's upgrading mode
+			// If set upgmode_pin_cfg_reg to "0", disable bootpin detect in PBP
+			"upgmode_pin_cfg_reg": "0x10700080", //PINMUX REG, PA0
+			"upgmode_pin_cfg_val": "0x13321",    // PINMUX VAL
+			"upgmode_pin_input_reg": "0x10700000", // INPUT VAL REG
+			"upgmode_pin_input_msk": "0x1", // Bit MSK
+			"upgmode_pin_input_val": "0x0", // Bit VAL
+			"upgmode_pin_pullup_dly": "500", // us
+		},
+		"uart": { // PBP's uart setting, remove uart setting to disable log in PBP
+			"main": {
+				//"uart_id": "0", // UART0 for log output
+				//"uart_tx_pin_cfg_reg": "0x10700080", // PA0
+				//"uart_tx_pin_cfg_val": "0x325",
+				//"uart_rx_pin_cfg_reg": "0x10700084", // PA1
+				//"uart_rx_pin_cfg_val": "0x325",
+
+				"uart_id": "1", // UART1 for log output
+				"uart_tx_pin_cfg_reg": "0x10700088", // PA2
+				"uart_tx_pin_cfg_val": "0x325",
+				"uart_rx_pin_cfg_reg": "0x1070008C", // PA3
+				"uart_rx_pin_cfg_val": "0x325",
+			},
+		},
+		"jtag": {
+			"jtag_only": "0", // 1: Boot code stop in PBP after PSRAM init and jtag init
+			"main": {
+				"jtag_id": "0",
+				"jtag_ms_pin_cfg_reg": "0x107000A8", // PA10
+				"jtag_ms_pin_cfg_val": "0x338",
+				"jtag_ck_pin_cfg_reg": "0x107000AC", // PA11
+				"jtag_ck_pin_cfg_val": "0x338",
+
+				// "jtag_ms_pin_cfg_reg": "0x18700280", // PC0
+				// "jtag_ms_pin_cfg_val": "0x338",
+				// "jtag_ck_pin_cfg_reg": "0x18700294", // PC5
+				// "jtag_ck_pin_cfg_val": "0x338",
+			},
+		},
+	}
+}

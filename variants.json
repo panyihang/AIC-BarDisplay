@@ -1,0 +1,134 @@
+{
+  "d125-txw935003b": {
+    "chip": "d12p",
+    "graph": "d12p_display-txw935003b_rt-thread_usbdisp",
+    "product": "d12p-usbdisp-txw935003b",
+    "version": "1.0.0",
+    "fps": 60,
+    "jpeg_quality": 6,
+    "timing": {
+      "width": 480,
+      "height": 1920,
+      "pixelclock": 69660000,
+      "hfront_porch": 40,
+      "hback_porch": 40,
+      "hsync_len": 4,
+      "vfront_porch": 32,
+      "vback_porch": 12,
+      "vsync_len": 4,
+      "lane_num": 4,
+      "ln_assign": 291,
+      "ln_polrs": 0
+    }
+  },
+  "d125-boe1126": {
+    "chip": "d12p",
+    "graph": "d12p_display-boe1126_rt-thread_usbdisp",
+    "product": "d12p-usbdisp-boe1126",
+    "version": "1.0.0",
+    "fps": 60,
+    "jpeg_quality": 6,
+    "timing": {
+      "width": 440,
+      "height": 1920,
+      "pixelclock": 65856000,
+      "hfront_porch": 50,
+      "hback_porch": 50,
+      "hsync_len": 20,
+      "vfront_porch": 16,
+      "vback_porch": 20,
+      "vsync_len": 4,
+      "lane_num": 4,
+      "ln_assign": 291,
+      "ln_polrs": 0
+    }
+  },
+  "d125-av092k5u": {
+    "chip": "d12p",
+    "graph": "d12p_display-av092k5u_rt-thread_usbdisp",
+    "product": "d12p-usbdisp-av092k5u",
+    "version": "1.0.0",
+    "fps": 60,
+    "jpeg_quality": 6,
+    "timing": {
+      "width": 462,
+      "height": 1920,
+      "pixelclock": 84672000,
+      "hfront_porch": 118,
+      "hback_porch": 118,
+      "hsync_len": 22,
+      "vfront_porch": 16,
+      "vback_porch": 20,
+      "vsync_len": 4,
+      "lane_num": 4,
+      "ln_assign": 291,
+      "ln_polrs": 0
+    }
+  },
+  "d133-txw935003b": {
+    "chip": "d13x",
+    "graph": "d13x_display-txw935003b_rt-thread_usbdisp",
+    "product": "d13x-usbdisp-txw935003b",
+    "version": "1.0.0",
+    "fps": 60,
+    "jpeg_quality": 6,
+    "timing": {
+      "width": 480,
+      "height": 1920,
+      "pixelclock": 69660000,
+      "hfront_porch": 40,
+      "hback_porch": 40,
+      "hsync_len": 4,
+      "vfront_porch": 32,
+      "vback_porch": 12,
+      "vsync_len": 4,
+      "lane_num": 4,
+      "ln_assign": 291,
+      "ln_polrs": 0
+    }
+  },
+  "d133-boe1126": {
+    "chip": "d13x",
+    "graph": "d13x_display-boe1126_rt-thread_usbdisp",
+    "product": "d13x-usbdisp-boe1126",
+    "version": "1.0.0",
+    "fps": 60,
+    "jpeg_quality": 6,
+    "timing": {
+      "width": 440,
+      "height": 1920,
+      "pixelclock": 65856000,
+      "hfront_porch": 50,
+      "hback_porch": 50,
+      "hsync_len": 20,
+      "vfront_porch": 16,
+      "vback_porch": 20,
+      "vsync_len": 4,
+      "lane_num": 4,
+      "ln_assign": 291,
+      "ln_polrs": 0
+    }
+  },
+  "d133-av092k5u": {
+    "chip": "d13x",
+    "graph": "d13x_display-av092k5u_rt-thread_usbdisp",
+    "product": "d13x-usbdisp-av092k5u",
+    "version": "1.0.0",
+    "fps": 60,
+    "jpeg_quality": 6,
+    "timing": {
+      "width": 462,
+      "height": 1920,
+      "pixelclock": 84672000,
+      "hfront_porch": 118,
+      "hback_porch": 118,
+      "hsync_len": 22,
+      "vfront_porch": 16,
+      "vback_porch": 20,
+      "vsync_len": 4,
+      "lane_num": 4,
+      "ln_assign": 291,
+      "ln_polrs": 0
+    }
+  }
+}

@@ -1,0 +1,1035 @@
+{
+  "libpaths": [
+    "${ROOT}/kernel/common/osal/"
+  ],
+  "asflags": " -march=rv32imafc_xtheade -mabi=ilp32f -c -x assembler-with-cpp -D__ASSEMBLY__",
+  "linkflags": " -march=rv32imafc_xtheade -mabi=ilp32f -nostartfiles -Wl,--no-whole-archive -lm -lc -lgcc -Wl,-gc-sections -Wl,-zmax-page-size=1024 -Wl,-Map=output/d12p_display-nor_baremetal_bootloader/images/d12p.map -T ${ROOT}/application/baremetal/bootloader/ldscript/d12p_bootloader_gcc.ld",
+  "includes": [
+    "${ROOT}",
+    "${ROOT}/bsp/artinchip/sys/d12p/include",
+    "${ROOT}/target/d12p/display-nor/include",
+    "${ROOT}/kernel/common/include",
+    "${ROOT}/kernel/common/include/osal",
+    "${ROOT}/bsp/artinchip/include/drv_bare",
+    "${ROOT}/bsp/artinchip/include/drv",
+    "${ROOT}/bsp/artinchip/include/hal",
+    "${ROOT}/bsp/artinchip/include/uapi",
+    "${ROOT}/bsp/artinchip/drv_bare/umm_heap",
+    "${ROOT}/bsp/artinchip/drv_bare/spinor/inc",
+    "${ROOT}/bsp/artinchip/drv/display",
+    "${ROOT}/bsp/common/include",
+    "${ROOT}/bsp/examples",
+    "${ROOT}/bsp/examples/test-csi",
+    "${ROOT}/bsp/artinchip/sys/d13x/csi_dsp/include",
+    "${ROOT}/bsp/examples/test-lwip",
+    "${ROOT}/bsp/examples/test-nand_verify",
+    "${ROOT}/bsp/examples/test-sdiomgr",
+    "${ROOT}/bsp/examples/test-vin",
+    "${ROOT}/bsp/examples/test-wifi",
+    "${ROOT}/bsp/examples_bare/test-mtd",
+    "${ROOT}/bsp/examples_bare/test-ve",
+    "${ROOT}/bsp/examples_bare/test-zlib",
+    "${ROOT}/bsp/peripheral/spinor_sfud/inc",
+    "${ROOT}/bsp/artinchip/common/include",
+    "${ROOT}/packages/artinchip/env",
+    "${ROOT}/packages/artinchip/of",
+    "${ROOT}/packages/artinchip/pinmux-check",
+    "${ROOT}/packages/artinchip/userid",
+    "${ROOT}/packages/artinchip/userid/include",
+    "${ROOT}/packages/artinchip/xip_ramcode",
+    "${ROOT}/packages/third-party/cherryusb/common",
+    "${ROOT}/packages/third-party/cherryusb/core",
+    "${ROOT}/packages/third-party/cherryusb/class/aic",
+    "${ROOT}/packages/third-party/cherryusb/class/cdc",
+    "${ROOT}/packages/third-party/cherryusb/class/msc",
+    "${ROOT}/packages/third-party/cherryusb/class/mtp",
+    "${ROOT}/packages/third-party/cherryusb/class/hid",
+    "${ROOT}/packages/third-party/cherryusb/class/audio",
+    "${ROOT}/packages/third-party/cherryusb/class/video",
+    "${ROOT}/packages/third-party/cherryusb/class/wireless",
+    "${ROOT}/packages/third-party/cherryusb/class/dfu",
+    "${ROOT}/packages/third-party/cherryusb/class/hub",
+    "${ROOT}/packages/third-party/cherryusb/class/vendor/vender_class",
+    "${ROOT}/packages/third-party/cherryusb/third_party/cherrymp",
+    "${ROOT}/packages/third-party/cherryusb/third_party/cherryrb",
+    "${ROOT}/packages/third-party/cherryusb",
+    "${ROOT}/packages/third-party/cherryusb/osal",
+    "${ROOT}/packages/third-party/dfs/include",
+    "${ROOT}/packages/third-party/dfs/filesystems/elmfat",
+    "${ROOT}/packages/third-party/fdtlib",
+    "${ROOT}/packages/third-party/fdtlib/src",
+    "${ROOT}/packages/third-party/minimp3",
+    "${ROOT}/application/baremetal/bootloader/include",
+    "${ROOT}/application/bsp/artinchip/include/uapi",
+    "${ROOT}/application/bsp/artinchip/include/drv_bare",
+    "${ROOT}/application/baremetal/bootloader/cmd",
+    "${ROOT}/application/baremetal/bootloader/lib/aicupg",
+    "${ROOT}/application/baremetal/bootloader/lib/common",
+    "${ROOT}/application/baremetal/bootloader/lib/fitimage"
+  ],
+  "cxxflags": " -march=rv32imafc_xtheade -mabi=ilp32f -c -g -ffunction-sections -fdata-sections -Wall -mcmodel=medlow -O2 -g2 -mno-dup-loop-header",
+  "sources": [
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_getopt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_memtest_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_reboot_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/crc32/crc32.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/image/image.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/partition/disk_part.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/partition/partition.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/private_param/private_param.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/aic_string.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/hexdump.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/pinmux_utils.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/show_speed.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_de_core.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_de_ui_layer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_de_vi_layer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_dsi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_fb.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_fb_helper.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/panel/panel_com.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/panel/panel_dsi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/panel/panel_dsi_fl7707_av092k5u_b.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/dma/drv_dma.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/gpio/aic_drv_gpio.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/block/block_dev.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/console/console.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/efuse/efuse.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/mtd/mtd_probe.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/mtd/mtdcore.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/mtd/mtdparts.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/printf/printf_port.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/printf/stdio_port.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/psram/xspi_psram.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/ringbuffer/ringbuffer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/rtc/drv_rtc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/mmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/mmc_block.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/mmc_parts.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/rpmb.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/rpmb_sha256.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/sdcard.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/sdmc/sdmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/spinor/partition.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/spinor/sfud_port.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/uart/uart.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/umm_heap/malloc_port.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/umm_heap/newlib_syscalls.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/umm_heap/umm_malloc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv_bare/wdt/wdt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/axicfg/hal_axicfg.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/aic_hal_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/aic_hal_fixed_rate_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/aic_hal_pll_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v2/aic_hal_auth_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v2/aic_hal_fixed_parent_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v2/aic_hal_multi_parent_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v2/aic_hal_reset.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/display/aic_hal_de.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/display/aic_hal_dsi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/dma/hal_dma_def_v3x.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/efuse/hal_efuse.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/gpio/aic_hal_gpio.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/qspi/hal_qspi_v3x.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/qspi/qspi_internal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/rtc/hal_rtc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/sdmc/bouncebuf.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/sdmc/hal_sdmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/syscfg/hal_syscfg_v1x.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/uart/aic_hal_uart.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/wdt/hal_wdt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/wri/hal_wri.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/wri/hal_wri_v10-12.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/xspi/hal_xspi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/osal/aic_osal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/main.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/aicupg.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/aicupg_detect.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/aicupg_erase.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/crc32.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/mem.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/nor_boot.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/progress_bar.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/ram_boot.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/reset.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/cmd/run.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/basic_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/data_trans_layer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/fwc_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/mmc_fwc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/nor_fwc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/ram_fwc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/upg_fat.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/upg_fat_direct.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/upg_fat_direct_mmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/upg_fat_direct_nor.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/aicupg/upg_main.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/fitimage/fitimage.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/common/boot_app.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/common/boot_time.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/common/config_parse.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/baremetal/bootloader/lib/common/crc16.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/target/d12p/display-nor/board.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/target/d12p/display-nor"
+      ]
+    },
+    {
+      "source": "${ROOT}/target/d12p/display-nor/pinmux.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/target/d12p/display-nor"
+      ]
+    },
+    {
+      "source": "${ROOT}/target/d12p/display-nor/sys_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/target/d12p/display-nor"
+      ]
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/class/aic/usbd_aicupg.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/core/usb_otg.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/core/usbd_core.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/demo/aicupg_for_usb.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/osal/usb_osal_baremetal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/port/aic/usb_dc_aic.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/port/aic/usb_dc_aic_ll.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/aic_clk_def.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/aic_drv_irq.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/aic_gpio_id.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/aic_reset_def.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/boot_param.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/boot_param_gcc.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/boot_res_nand.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/isr.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/ram_param.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/startup_gcc.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/sys_freq.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/system.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/time.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/trap_c.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d12p/vectors.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d12p"
+      ]
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_addresses.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_empty_tree.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_overlay.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_ro.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_rw.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_strerror.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_sw.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_wip.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/filesystems/elmfat/dfs_elm.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/filesystems/elmfat/ff.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/filesystems/elmfat/ffunicode.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/filesystems/elmfat/sdmc_disk/sdmc_disk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/filesystems/elmfat/usb_disk/usb_disk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/src/dfs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/src/dfs_cli.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/src/dfs_file.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/src/dfs_fs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/dfs/src/dfs_posix.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/of/of.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud_private.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud_qe.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud_sfdp.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/examples_bare/test-efuse/efuse_cmds.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/examples_bare/test-mmc/test_mmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/examples_bare/test-mtd/mtd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/examples_bare/test-spinor/spinor.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    }
+  ],
+  "cflags": " -march=rv32imafc_xtheade -mabi=ilp32f -c -g -ffunction-sections -fdata-sections -Wall -mcmodel=medlow -O2 -g2 -mno-dup-loop-header -c -ffunction-sections -c -ffunction-sections -c -ffunction-sections -ffreestanding ",
+  "libs": [
+    "aic-mem_e907f"
+  ],
+  "defines": [
+    "HAVE_CCONFIG_H",
+    "CONFIG_USB_HS"
+  ]
+}

@@ -1,0 +1,2166 @@
+{
+  "libpaths": [
+    "${ROOT}/kernel/common/osal/",
+    "${ROOT}/packages/artinchip/mpp/../aicp-dec/"
+  ],
+  "asflags": " -march=rv32imafdcpzpsfoperand_xtheade -mabi=ilp32d -c -x assembler-with-cpp -D__ASSEMBLY__ ",
+  "linkflags": " -march=rv32imafdcpzpsfoperand_xtheade -mabi=ilp32d -nostartfiles -Wl,--no-whole-archive -lgcc -Wl,-gc-sections -Wl,-zmax-page-size=1024 -Wl,-Map=output/d13x_display-boe1126_rt-thread_usbdisp/images/d13x.map -T ${ROOT}/bsp/artinchip/sys/d13x/link_script/gcc_aic.ld",
+  "includes": [
+    "${ROOT}",
+    "${ROOT}/bsp/artinchip/sys/d13x/include",
+    "${ROOT}/target/d13x/display-nor/include",
+    "${ROOT}/kernel/rt-thread/include",
+    "${ROOT}/kernel/rt-thread/libcpu/risc-v/artinchip/e9xx",
+    "${ROOT}/kernel/rt-thread/components/dfs/include",
+    "${ROOT}/kernel/rt-thread/components/dfs/filesystems/elmfat",
+    "${ROOT}/kernel/rt-thread/components/dfs/filesystems/romfs",
+    "${ROOT}/kernel/rt-thread/components/drivers/include",
+    "${ROOT}/kernel/rt-thread/components/drivers/sensors",
+    "${ROOT}/kernel/rt-thread/components/drivers/spi",
+    "${ROOT}/kernel/rt-thread/components/drivers/spi/sfud/inc",
+    "${ROOT}/kernel/rt-thread/components/fal/inc",
+    "${ROOT}/kernel/rt-thread/components/finsh",
+    "${ROOT}/kernel/rt-thread/components/legacy",
+    "${ROOT}/kernel/rt-thread/components/legacy/dfs",
+    "${ROOT}/kernel/rt-thread/components/libc/compilers/common/include",
+    "${ROOT}/kernel/rt-thread/components/libc/compilers/newlib",
+    "${ROOT}/kernel/rt-thread/components/libc/posix/io/poll",
+    "${ROOT}/kernel/rt-thread/components/libc/posix/io/stdio",
+    "${ROOT}/kernel/rt-thread/components/libc/posix/ipc",
+    "${ROOT}/kernel/rt-thread/components/utilities/ulog",
+    "${ROOT}/kernel/common/include",
+    "${ROOT}/kernel/common/include/osal",
+    "${ROOT}/bsp/artinchip/include/drv",
+    "${ROOT}/bsp/artinchip/include/hal",
+    "${ROOT}/bsp/artinchip/include/uapi",
+    "${ROOT}/bsp/artinchip/drv/display",
+    "${ROOT}/bsp/common/include",
+    "${ROOT}/bsp/examples",
+    "${ROOT}/bsp/examples/test-csi",
+    "${ROOT}/bsp/artinchip/sys/d13x/csi_dsp/include",
+    "${ROOT}/bsp/examples/test-lwip",
+    "${ROOT}/bsp/examples/test-nand_verify",
+    "${ROOT}/bsp/examples/test-sdiomgr",
+    "${ROOT}/bsp/examples/test-vin",
+    "${ROOT}/bsp/examples/test-wifi",
+    "${ROOT}/bsp/examples_bare/test-mtd",
+    "${ROOT}/bsp/examples_bare/test-ve",
+    "${ROOT}/bsp/examples_bare/test-zlib",
+    "${ROOT}/bsp/peripheral/spinor_sfud/inc",
+    "${ROOT}/bsp/artinchip/common/include",
+    "${ROOT}/packages/artinchip/env",
+    "${ROOT}/packages/artinchip/lvgl-ui/aic_drivers",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/env_support/rt-thread",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/display",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/indev",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/layouts",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/osal",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/stdlib",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/themes",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/tick",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sdl",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/vg_lite",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/nxp/pxp",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/nxp/vglite",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/renesas/dave2d",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/arm2d",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/arm2d",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/helium",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/neon",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/evdev",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/libinput",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/nuttx",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/sdl",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/windows",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/x11",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/drm",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/fb",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/ili9341",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/lcd",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/st7735",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/st7789",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/st7796",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/drivers/display/tft_espi",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/layouts/flex",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/layouts/grid",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/barcode",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/bin_decoder",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/bmp",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/ffmpeg",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/freetype",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/fsdrv",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/gif",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/libjpeg_turbo",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/libpng",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/lodepng",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/lz4",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/qrcode",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/rle",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/rlottie",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/thorvg",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/tiny_ttf",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/tjpgd",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/cache",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/file_explorer",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/fragment",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/gridnav",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/ime",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/imgfont",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/monkey",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/observer",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/snapshot",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/sysmon",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/vg_lite_tvg",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/stdlib/builtin",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/themes/default",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/themes/mono",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/themes/simple",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/animimage",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/arc",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/bar",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/button",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/buttonmatrix",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/calendar",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/canvas",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/chart",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/checkbox",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/dropdown",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/image",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/imagebutton",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/keyboard",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/label",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/led",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/line",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/list",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/menu",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/msgbox",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/objx_templ",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/roller",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/scale",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/slider",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/span",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/spinbox",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/spinner",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/switch",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/table",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/tabview",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/textarea",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/tileview",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/win",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_mpp_dec",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers",
+    "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9",
+    "${ROOT}/packages/artinchip/lvgl-ui",
+    "${ROOT}/packages/artinchip/mpp/include",
+    "${ROOT}/packages/artinchip/mpp/base/include",
+    "${ROOT}/packages/artinchip/mpp/ge/include",
+    "${ROOT}/packages/artinchip/mpp/ve/include",
+    "${ROOT}/packages/artinchip/mpp/mpp_test",
+    "${ROOT}/packages/artinchip/of",
+    "${ROOT}/packages/artinchip/pinmux-check",
+    "${ROOT}/packages/artinchip/thread_stack_trace",
+    "${ROOT}/packages/artinchip/userid",
+    "${ROOT}/packages/artinchip/userid/include",
+    "${ROOT}/packages/artinchip/xip_ramcode",
+    "${ROOT}/packages/third-party/cherryusb/common",
+    "${ROOT}/packages/third-party/cherryusb/core",
+    "${ROOT}/packages/third-party/cherryusb/class/aic",
+    "${ROOT}/packages/third-party/cherryusb/class/cdc",
+    "${ROOT}/packages/third-party/cherryusb/class/msc",
+    "${ROOT}/packages/third-party/cherryusb/class/mtp",
+    "${ROOT}/packages/third-party/cherryusb/class/hid",
+    "${ROOT}/packages/third-party/cherryusb/class/audio",
+    "${ROOT}/packages/third-party/cherryusb/class/video",
+    "${ROOT}/packages/third-party/cherryusb/class/wireless",
+    "${ROOT}/packages/third-party/cherryusb/class/dfu",
+    "${ROOT}/packages/third-party/cherryusb/class/hub",
+    "${ROOT}/packages/third-party/cherryusb/class/vendor/vender_class",
+    "${ROOT}/packages/third-party/cherryusb/third_party/cherrymp",
+    "${ROOT}/packages/third-party/cherryusb/third_party/cherryrb",
+    "${ROOT}/packages/third-party/cherryusb",
+    "${ROOT}/packages/third-party/cherryusb/osal",
+    "${ROOT}/packages/third-party/cpu_usage",
+    "${ROOT}/packages/third-party/fdtlib",
+    "${ROOT}/packages/third-party/fdtlib/src",
+    "${ROOT}/packages/third-party/littlefs",
+    "${ROOT}/packages/third-party/minimp3",
+    "${ROOT}/application/rt-thread/usbdisp"
+  ],
+  "cxxflags": " -march=rv32imafdcpzpsfoperand_xtheade -mabi=ilp32d -c -g -ffunction-sections -fdata-sections -Wall -mcmodel=medany -O2 -g2 -mno-dup-loop-header",
+  "sources": [
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_cmd_base.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_debug_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_memtest_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/cmd/aic_reboot_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/crc32/crc32.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/image/image.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/partition/disk_part.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/partition/partition.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/private_param/private_param.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/aic_string.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/hexdump.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/pinmux_utils.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/common/utils/show_speed.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/adcim/drv_adcim.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_de_core.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_de_ui_layer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_de_vi_layer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_dsi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_fb.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/drv_fb_helper.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/panel/panel_com.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/panel/panel_dsi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/display/panel/panel_dsi_fl7707_boe1126_b.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/dma/drv_dma.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/efuse/drv_efuse.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/efuse/efuse_cmds.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/ge/aic_drv_ge.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/gpio/aic_drv_gpio.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/qspi/drv_qspi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/rtc/drv_rtc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/sdmc/drv_sdmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/spi/drv_spi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/spinor/spinor_fal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/spinor/spinor_sfud.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/syscfg/drv_syscfg.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/tsen/drv_tsen.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/uart/aic_drv_uart.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/ve/aic_drv_ve.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/wdt/drv_wdt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/drv/wri/drv_wri.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/adcim/hal_adcim.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/aic_hal_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/aic_hal_fixed_rate_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/aic_hal_pll_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v1/aic_hal_cpu_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v1/aic_hal_disp_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v1/aic_hal_fixed_parent_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v1/aic_hal_multi_parent_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/cmu/v1/aic_hal_reset.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/display/aic_hal_de.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/display/aic_hal_dsi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/dma/hal_dma_def_v1x.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/efuse/hal_efuse.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/ge/hal_ge_cmdq.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/gpio/aic_hal_gpio.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/qspi/hal_qspi_slave.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/qspi/hal_qspi_v1x.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/qspi/qspi_internal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/rtc/hal_rtc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/sdmc/bouncebuf.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/sdmc/hal_sdmc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/syscfg/hal_syscfg_v1x.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/tsen/hal_tsen.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/uart/aic_hal_uart.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/ve/aic_hal_ve.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/wdt/hal_wdt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/wri/hal_wri.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/wri/hal_wri_v10-12.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/hal/xspi/hal_xspi.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/common/osal/aic_osal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/target/d13x/display-nor/board.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/target/d13x/display-nor"
+      ]
+    },
+    {
+      "source": "${ROOT}/target/d13x/display-nor/pinmux.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/target/d13x/display-nor"
+      ]
+    },
+    {
+      "source": "${ROOT}/target/d13x/display-nor/sys_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/target/d13x/display-nor"
+      ]
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/class/hid/usbd_hid.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/class/msc/usbd_msc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/class/vendor/vender_class/usbd_vender.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/core/usbd_core.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/osal/usb_osal_rtthread.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/port/aic/usb_dc_aic.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cherryusb/port/aic/usb_dc_aic_ll.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/aic_drv_irq.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/aic_gpio_id.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/aic_hal_clk.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/aic_hal_reset.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/boot_param.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/boot_param_gcc.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/boot_res_nand.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/isr.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/ram_param.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/startup_gcc.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/sys_freq.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/system.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/time.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/trap_c.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/bsp/artinchip/sys/d13x/vectors.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": [
+        "${ROOT}/bsp/artinchip/sys/d13x"
+      ]
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/common/cctype.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/common/cstdio.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/common/cstdlib.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/common/cstring.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/common/ctime.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/common/cwchar.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/libc/compilers/newlib/syscalls.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/libcpu/risc-v/artinchip/e9xx/context_gcc.S",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/libcpu/risc-v/artinchip/e9xx/cpuport.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cpu_usage/cpu_usage.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/cpu_usage/cpu_usage_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/completion.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/dataqueue.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/pipe.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/ringblk_buf.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/ringbuffer.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/waitqueue.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/ipc/workqueue.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/misc/adc.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/misc/pin.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/mtd/mtd_nor.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/rtc/alarm.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/rtc/rtc.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sdio/block_dev.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sdio/mmc.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sdio/mmcsd_core.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sdio/sd.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sdio/sdio.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sdio/sdio_mgr.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/serial/serial.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/spi/qspi_core.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/spi/spi_core.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/spi/spi_dev.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/spi/spi_flash_sfud.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/watchdog/watchdog.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/fal/src/fal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/fal/src/fal_aic_partition.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/fal/src/fal_flash.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/fal/src/fal_partition.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/fal/src/fal_rtt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_addresses.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_empty_tree.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_overlay.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_ro.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_rw.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_strerror.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_sw.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/fdtlib/fdt_wip.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/filesystems/elmfat/dfs_elm.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/filesystems/elmfat/dirents_cache.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/filesystems/elmfat/ff.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/filesystems/elmfat/ffunicode.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/filesystems/romfs/dfs_romfs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/filesystems/romfs/romfs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/src/dfs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/src/dfs_file.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/src/dfs_fs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/dfs/src/dfs_posix.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/finsh/cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/finsh/msh.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/finsh/msh_file.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/finsh/msh_parse.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/finsh/shell.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/clock.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/components.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/device.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/idle.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/ipc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/irq.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/kservice.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/memheap.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/mempool.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/object.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/scheduler.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/thread.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/src/timer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/legacy/ipc/workqueue_legacy.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/littlefs/dfs_lfs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/littlefs/lfs.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/third-party/littlefs/lfs_crc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/env_support/rt-thread/lv_rt_thread_port.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_group.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_class.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_draw.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_event.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_pos.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_scroll.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_style.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_style_gen.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_obj_tree.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/core/lv_refr.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/display/lv_display.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_arc.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_buf.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_image.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_label.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_line.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_mask.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_rect.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_draw_triangle.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/lv_image_decoder.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/lv_draw_sw_blend.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_argb8888.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb888.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_arc.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_border.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_box_shadow.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_fill.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_gradient.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_img.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_letter.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_line.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_mask.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_transform.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/draw/sw/lv_draw_sw_triangle.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font/lv_binfont_loader.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font/lv_font.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font/lv_font_fmt_txt.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font/lv_font_montserrat_12.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font/lv_font_montserrat_14.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/font/lv_font_montserrat_16.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/indev/lv_indev.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/indev/lv_indev_scroll.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/layouts/lv_layout.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/bin_decoder/lv_bin_decoder.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/libs/qrcode/qrcodegen.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/lv_init.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/cache/_lv_cache_lru_rb.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/cache/lv_cache.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/cache/lv_cache_entry.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/cache/lv_image_cache.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_anim.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_anim_timeline.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_area.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_array.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_async.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_color.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_event.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_fs.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_ll.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_lru.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_math.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_palette.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_rb.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_style.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_style_gen.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_text.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_timer.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/misc/lv_utils.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/osal/lv_rtthread.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/others/observer/lv_observer.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/stdlib/lv_mem.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/stdlib/rtthread/lv_mem_core_rtthread.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/stdlib/rtthread/lv_sprintf_rtthread.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/stdlib/rtthread/lv_string_rtthread.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/themes/lv_theme.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/tick/lv_tick.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/arc/lv_arc.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/button/lv_button.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/buttonmatrix/lv_buttonmatrix.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/label/lv_label.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/spinner/lv_spinner.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lvgl/src/widgets/switch/lv_switch.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lv_demo.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d/lv_draw_buf_ge2d.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d/lv_draw_ge2d.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d/lv_draw_ge2d_fill.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d/lv_draw_ge2d_img.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d/lv_draw_ge2d_img_scale.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_ge2d/lv_draw_ge2d_utils.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_mpp_dec/lv_aic_bmp.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_mpp_dec/lv_aic_img_dsc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_mpp_dec/lv_aic_stream.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_mpp_dec/lv_mpp_dec.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_port_disp.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/lvgl-ui/lvgl_v9/lv_drivers/lv_port_indev.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/base/memory/mpp_mem.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/base/ringbuf/mpp_ringbuf.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/base/thread/mpp_thread.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/fb/mpp_fb.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ge/cmdq_ops.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ge/mpp_ge.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ge/normal_ops.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/common/ve.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/common/ve_buffer.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/frame_manager.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/jpeg/jpeg_hal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/jpeg/mjpeg_decoder.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/mpp_decoder.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/packet_manager.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/png/png_decoder.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/png/png_hal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/decoder/zlib/zlib_uncompress.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/encoder/jpeg/jpeg_enc.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/encoder/jpeg/jpeg_enc_hal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/encoder/jpeg/jpeg_tables.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/mpp/ve/encoder/mpp_encoder.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/of/of.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/pinmux-check/pinmux_check.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sensors/sensor.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/drivers/sensors/sensor_cmd.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud_private.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud_qe.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/peripheral/spinor_sfud/src/sfud_sfdp.c",
+      "defines": [],
+      "cflags": " ",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/examples/test-spinor/test_fal.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/bsp/examples/test-spinor/test_sfud.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/packages/artinchip/thread_stack_trace/thread_stack_trace.c",
+      "defines": [],
+      "cflags": " -w",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/display.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/main.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/settings.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/simhei_30.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/simhei_50.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/transport.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/ui.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/application/rt-thread/usbdisp/video.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/utilities/ulog/ulog.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    },
+    {
+      "source": "${ROOT}/kernel/rt-thread/components/utilities/ulog/backend/console_be.c",
+      "defines": [],
+      "cflags": "",
+      "cpppath": []
+    }
+  ],
+  "cflags": " -march=rv32imafdcpzpsfoperand_xtheade -mabi=ilp32d -c -g -ffunction-sections -fdata-sections -Wall -mcmodel=medany -O2 -g2 -mno-dup-loop-header -c -ffunction-sections -c -ffunction-sections",
+  "libs": [
+    "c",
+    "m",
+    "aic-mem_e907fdp"
+  ],
+  "defines": [
+    "HAVE_CCONFIG_H",
+    "__RTTHREAD__",
+    "RT_USING_NEWLIB",
+    "RT_USING_LIBC",
+    "_POSIX_C_SOURCE=1",
+    "CONFIG_USB_HS",
+    "LFS_CONFIG=lfs_config.h"
+  ]
+}

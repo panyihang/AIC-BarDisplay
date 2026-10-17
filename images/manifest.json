@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "d125-txw935003b",
+    "path": "images/d125-txw935003b.img",
+    "bytes": 29548544,
+    "sha256": "747e97cf995cea2fd0f005c40bf0cd4cb7291e342bd36502bd5ccc7496b3036d",
+    "width": 480,
+    "height": 1920
+  },
+  {
+    "variant": "d125-boe1126",
+    "path": "images/d125-boe1126.img",
+    "bytes": 29546496,
+    "sha256": "3efb3fe81346838103c91030b3175e1ffdd8f7be154d472c6344707bd4ae1c4c",
+    "width": 440,
+    "height": 1920
+  },
+  {
+    "variant": "d125-av092k5u",
+    "path": "images/d125-av092k5u.img",
+    "bytes": 29546496,
+    "sha256": "2a59a7e5cec877ed5544e5d1fb460b69dc636ac9c95bf7bccd19498b37732a37",
+    "width": 462,
+    "height": 1920
+  },
+  {
+    "variant": "d133-txw935003b",
+    "path": "images/d133-txw935003b.img",
+    "bytes": 29575168,
+    "sha256": "742c36e7168bd058d2657b7b9f85c02aa39ff458643fd193544b2d48d147b286",
+    "width": 480,
+    "height": 1920
+  },
+  {
+    "variant": "d133-boe1126",
+    "path": "images/d133-boe1126.img",
+    "bytes": 29573120,
+    "sha256": "f8bea62a74cd249501a433c8f9fae51a2d17f1a170079df7df901817ca88ca15",
+    "width": 440,
+    "height": 1920
+  },
+  {
+    "variant": "d133-av092k5u",
+    "path": "images/d133-av092k5u.img",
+    "bytes": 29573120,
+    "sha256": "a31483f3b123e9bbdb2d6b846d69b4a1714d32453408db8117038fcd0b9818fd",
+    "width": 462,
+    "height": 1920
+  }
+]

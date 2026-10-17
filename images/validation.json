@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-17",
+  "bootloaders": 2,
+  "variants": [
+    "d125-txw935003b",
+    "d125-boe1126",
+    "d125-av092k5u",
+    "d133-txw935003b",
+    "d133-boe1126",
+    "d133-av092k5u"
+  ],
+  "clean_builds_passed": 6,
+  "packaged_assets_verified": 6,
+  "parameter_generation_check": "472 px width / 48 px front porch passed",
+  "sdk_build_system_present": false,
+  "external_sdk_required": false,
+  "platform_footprint": {
+    "logical_bytes": 238101553,
+    "stored_bytes": 122814286,
+    "files": 1505
+  },
+  "generated_outputs": {
+    "logical_bytes": 177364339,
+    "stored_bytes": 177364339,
+    "files": 7
+  }
+}

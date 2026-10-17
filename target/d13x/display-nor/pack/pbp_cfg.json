@@ -1,0 +1,315 @@
+{
+	"psram": {
+
+		"cfg0": { //OPI APS3208K 8M PSRAM
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03020001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030303",
+				"psram_cfg1": "0x00400001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060503",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060503",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+				"proto": "0x40030204",
+				"id":    "0x80c980c9",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000002", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x19000000",
+				"proto1": "0xc0000402",
+				"buf1":   "0x80000000",
+				"proto2": "0xffffffff",
+				"buf2":   "0xffffffff",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80020002",
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00060003",
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0xAA55AA55", // training_value1
+				"buf1": "0x55AA55AA", // training_value2
+				"buf2": "0x02080100", //byte0:read_hold (0x02); byte1:write_hold (0x08); byte3:axi_read_first(0x01); byte4: bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+
+        "cfg1": { // XCCELA AP12816 16M PSRAM
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03000001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304", //cmd_lines, addr_lines, data_lines, addr_width
+				"psram_cfg1": "0x02000001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060405",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060403",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+
+				"proto": "0x40040104",
+				"id":    "0xdd8ddd8d",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000001", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x11000000",
+				"proto1": "0xc0000401",
+				"buf1":   "0x20000000",
+				"proto2": "0xc0000801",
+				"buf2":   "0x4c000000",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80070002", //cmd: byte[0]=0x80; dummy: byte[1]=0x07; addr: byte[2]=0x08; len: byte[3]=0x02;
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00070003",
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x5555aaaa",
+				"buf1": "0xaaaa5555",
+				"buf2": "0x05050101", //byte0:read_hold; byte1:write_hold; byte3:axi_read_first; byte4:bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+
+		"cfg2": { // XCCELA UnilC SCKW18X12816 16M PSRAM
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03000001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304", //cmd_lines, addr_lines, data_lines, addr_width
+				"psram_cfg1": "0x02000001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060405",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060403",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+
+				"proto": "0x40040104",
+				"id":    "0xc59ac59a",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000001", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x10000000",
+				"proto1": "0xc0000401",
+				"buf1":   "0x20000000",
+				"proto2": "0xc0000801",
+				"buf2":   "0x4c000000",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80070002", //cmd: byte[0]=0x80; dummy: byte[1]=0x07; addr: byte[2]=0x08; len: byte[3]=0x02;
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00070003",
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x5555aaaa",
+				"buf1": "0xaaaa5555",
+				"buf2": "0x05050101", //byte0:read_hold; byte1:write_hold; byte3:axi_read_first; byte4:bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+
+		"cfg3": { // XCCELA AP25616 32M PSRAM
+			"common": {
+				"clock":      "198000000",
+				"cs0_pins":   "0x0",
+				"cs1_pins":   "0x0",
+				"xspi_ctl":   "0x116d",
+				"xspi_tcr":   "0x280011",
+				"xspi_cfg":   "0x03000001",
+				"xspi_ldo":   "0x17", //1.92V
+				"psram_cfg0": "0x03030304", //cmd_lines, addr_lines, data_lines, addr_width
+				"psram_cfg1": "0x02000001",
+				"xspi_cs0_iocfg1": "0x02020202",
+				"xspi_cs0_iocfg2": "0x02020202",
+				"xspi_cs0_iocfg3": "0x36060405",
+				"xspi_cs0_iocfg4": "0x26",
+				"xspi_cs1_iocfg1": "0x02020202",
+				"xspi_cs1_iocfg2": "0x02020202",
+				"xspi_cs1_iocfg3": "0x36060403",
+				"xspi_cs1_iocfg4": "0x26",
+			},
+			"reset": {
+				"proto": "0xff000001",
+				"buf":   "0x00ffffff",
+			},
+			"getid": {
+
+				"proto": "0x40040104",
+				"id":    "0xdf8ddf8d",
+				"buf":   "0xffffffff",
+			},
+			"init": {
+				"proto0": "0xc0000001", //cmd: byte[0]=0xc0; dummy: byte[1]=0x00; addr: byte[2]=0x00; len: byte[3]=0x02;
+				"buf0":   "0x11000000",
+				"proto1": "0xc0000401",
+				"buf1":   "0x20000000",
+				"proto2": "0xc0000801",
+				"buf2":   "0x4c000000",
+				"proto3": "0xffffffff",
+				"buf3":   "0xffffffff",
+			},
+			"xip_cfg": {
+				"wr_proto": "0x80070002", //cmd: byte[0]=0x80; dummy: byte[1]=0x07; addr: byte[2]=0x08; len: byte[3]=0x02;
+				"wr_buf":   "0xffffffff",
+				"rd_proto": "0x00070003",
+				"rd_buf":   "0xffffffff",
+			},
+			"backup": {
+				"buf0": "0x5555aaaa",
+				"buf1": "0xaaaa5555",
+				"buf2": "0x05050101", //byte0:read_hold; byte1:write_hold; byte3:axi_read_first; byte4:bit mode
+				"buf3": "0xFFFFFF04",
+				"buf4": "0xFFFFFF05",
+				"buf5": "0xFFFFFF06",
+				"buf6": "0xFFFFFF07",
+				"buf7": "0xFFFFFF08",
+				"buf8": "0xFFFFFF09",
+				"buf9": "0xFFFFFF00",
+			},
+		},
+	},
+
+	"system": {
+		"upgmode": { // Set PIN to enter BROM's upgrading mode
+			// If set upgmode_pin_cfg_reg to "0", disable bootpin detect in PBP
+			"upgmode_pin_cfg_reg": "0x1870048C", // PINMUX REG, PE3
+			"upgmode_pin_cfg_val": "0x10321",    // PINMUX VAL
+			"upgmode_pin_input_reg": "0x18700400", // INPUT VAL REG, PE group
+			"upgmode_pin_input_msk": "0x8", // Bit MSK, PE3
+			"upgmode_pin_input_val": "0x0", // Bit VAL
+			"upgmode_pin_pullup_dly": "500", // us
+		},
+		"uart": { // PBP's uart setting, remove uart setting to disable log in PBP
+			"main": {
+				//"uart_id": "0", // UART0 for log output
+				//"uart_tx_pin_cfg_reg": "0x18700080", // PA0
+				//"uart_tx_pin_cfg_val": "0x035",
+				//"uart_rx_pin_cfg_reg": "0x18700084", // PA1
+				//"uart_rx_pin_cfg_val": "0x035",
+
+				// "uart_id": "0", // UART0 for log output
+				// "uart_tx_pin_cfg_reg": "0x18700E88", // PN2
+				// "uart_tx_pin_cfg_val": "0x324",
+				// "uart_rx_pin_cfg_reg": "0x18700E8C", // PN3
+				// "uart_rx_pin_cfg_val": "0x324",
+
+            "uart_id": "6", // UART6 for log output
+				"uart_tx_pin_cfg_reg": "0x18700498", // PE6
+				"uart_tx_pin_cfg_val": "0x325",
+				"uart_rx_pin_cfg_reg": "0x1870049C", // PE7
+				"uart_rx_pin_cfg_val": "0x325",
+
+				// "uart_id": "1", // UART1 for log output
+				// "uart_tx_pin_cfg_reg": "0x18700090", // PA4
+				// "uart_tx_pin_cfg_val": "0x325",
+				// "uart_rx_pin_cfg_reg": "0x18700094", // PA5
+				// "uart_rx_pin_cfg_val": "0x325",
+
+				// "uart_id": "3", // UART3 for log output
+				// "uart_tx_pin_cfg_reg": "0x187004B8", // PE14
+				// "uart_tx_pin_cfg_val": "0x325",
+				// "uart_rx_pin_cfg_reg": "0x187004BC", // PE15
+				// "uart_rx_pin_cfg_val": "0x325",
+
+				// "uart_id": "4", // UART4 for log output
+				// "uart_tx_pin_cfg_reg": "0x18700198", // PB6
+				// "uart_tx_pin_cfg_val": "0x325",
+				// "uart_rx_pin_cfg_reg": "0x1870019C", // PB7
+				// "uart_rx_pin_cfg_val": "0x325",
+
+				// "uart_id": "5", // UART5 for log output
+				// "uart_tx_pin_cfg_reg": "0x18700490", // PE4
+				// "uart_tx_pin_cfg_val": "0x325",
+				// "uart_rx_pin_cfg_reg": "0x18700494", // PE5
+				// "uart_rx_pin_cfg_val": "0x325",
+			},
+		},
+		"jtag": {
+			"jtag_only": "0", // 1: Boot code stop in PBP after DDR init and jtag init
+			"main": {
+				"jtag_id": "0",
+				"jtag_ms_pin_cfg_reg": "0x187000A8", // PA10
+				"jtag_ms_pin_cfg_val": "0x338",
+				"jtag_ck_pin_cfg_reg": "0x187000AC", // PA11
+				"jtag_ck_pin_cfg_val": "0x338",
+
+				// "jtag_ms_pin_cfg_reg": "0x18700280", // PC0
+				// "jtag_ms_pin_cfg_val": "0x338",
+				// "jtag_ck_pin_cfg_reg": "0x18700294", // PC5
+				// "jtag_ck_pin_cfg_val": "0x338",
+			},
+		},
+	},
+}
